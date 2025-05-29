@@ -1,10 +1,12 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 
 const experiences = [
   {
     company: 'Meta',
+    logo: '/assets/logos/meta.svg',
     location: 'California, US',
     period: 'March 2014 - Present',
     sections: [
@@ -69,6 +71,7 @@ const experiences = [
   },
   {
     company: 'Mozilla Corporation',
+    logo: '/assets/logos/mozilla.svg',
     location: 'Taipei, Taiwan',
     period: 'September 2013 - November 2013',
     roles: [
@@ -81,6 +84,7 @@ const experiences = [
   },
   {
     company: 'Garmin International',
+    logo: '/assets/logos/garmin.png',
     location: 'Taipei, Taiwan',
     period: 'October 2010 - August 2013',
     roles: [
@@ -93,6 +97,7 @@ const experiences = [
   },
   {
     company: 'ESP Style',
+    logo: '',
     location: 'Taipei, Taiwan',
     period: 'May 2008 - July 2010',
     roles: [
@@ -108,6 +113,7 @@ const experiences = [
 const education = [
   {
     institution: 'National Taiwan University',
+    logo: '/assets/logos/ntu.svg',
     degrees: [
       { title: 'Master of Science (MS), Computer Science', period: '2008-2010' },
       { title: 'Bachelor of Science (BS), Computer Science', period: '2004-2008' }
@@ -115,6 +121,7 @@ const education = [
   },
   {
     institution: 'National Experimental High School at Hsinchu Science Park',
+    logo: '/assets/logos/nehs.png',
     degrees: []
   }
 ]
@@ -149,6 +156,7 @@ interface Section {
 
 interface Experience {
   company: string
+  logo?: string
   location: string
   period: string
   sections?: Section[]
@@ -199,13 +207,28 @@ export default function WorkExperience() {
                         'from-orange-200 to-yellow-200'
                       } opacity-30 blur-3xl`}></div>
                       <div className="relative z-10 mb-6">
-                        <h3 className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
-                          {exp.company}
-                        </h3>
-                        <div className="flex items-center gap-2 mt-1">
-                          <span className="text-gray-600">{exp.location}</span>
-                          <span className="text-gray-400">•</span>
-                          <span className="text-gray-600 font-medium">{exp.period}</span>
+                        <div className="flex items-start justify-between">
+                          <div>
+                            <h3 className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+                              {exp.company}
+                            </h3>
+                            <div className="flex items-center gap-2 mt-1">
+                              <span className="text-gray-600">{exp.location}</span>
+                              <span className="text-gray-400">•</span>
+                              <span className="text-gray-600 font-medium">{exp.period}</span>
+                            </div>
+                          </div>
+                          {exp.logo && (
+                            <div className="ml-4 p-2 bg-white rounded-lg shadow-sm">
+                              <Image
+                                src={exp.logo}
+                                alt={`${exp.company} logo`}
+                                width={exp.company === 'Mozilla Corporation' ? 40 : 48}
+                                height={exp.company === 'Mozilla Corporation' ? 40 : 48}
+                                className="object-contain"
+                              />
+                            </div>
+                          )}
                         </div>
                       </div>
                       
@@ -339,19 +362,34 @@ export default function WorkExperience() {
                           >
                             <div className="w-2 h-2 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full mt-2"></div>
                             <div className="flex-1">
-                              <h4 className="text-lg font-bold text-gray-800">{edu.institution}</h4>
-                              {edu.degrees.length > 0 ? (
-                                <div className="mt-2 space-y-2">
-                                  {edu.degrees.map((degree, i) => (
-                                    <div key={i} className="bg-gradient-to-r from-gray-50 to-white rounded-lg p-3 border border-gray-100">
-                                      <p className="text-gray-800 font-medium">{degree.title}</p>
-                                      <p className="text-sm text-purple-600">{degree.period}</p>
+                              <div className="flex items-start justify-between">
+                                <div className="flex-1">
+                                  <h4 className="text-lg font-bold text-gray-800">{edu.institution}</h4>
+                                  {edu.degrees.length > 0 ? (
+                                    <div className="mt-2 space-y-2">
+                                      {edu.degrees.map((degree, i) => (
+                                        <div key={i} className="bg-gradient-to-r from-gray-50 to-white rounded-lg p-3 border border-gray-100">
+                                          <p className="text-gray-800 font-medium">{degree.title}</p>
+                                          <p className="text-sm text-purple-600">{degree.period}</p>
+                                        </div>
+                                      ))}
                                     </div>
-                                  ))}
+                                  ) : (
+                                    <p className="text-gray-600 mt-1">High School Diploma</p>
+                                  )}
                                 </div>
-                              ) : (
-                                <p className="text-gray-600 mt-1">High School Diploma</p>
-                              )}
+                                {edu.logo && (
+                                  <div className="ml-4 p-2 bg-white rounded-lg shadow-sm">
+                                    <Image
+                                      src={edu.logo}
+                                      alt={`${edu.institution} logo`}
+                                      width={edu.institution.includes('Taiwan') ? 120 : 48}
+                                      height={48}
+                                      className="object-contain"
+                                    />
+                                  </div>
+                                )}
+                              </div>
                             </div>
                           </motion.div>
                         ))}
