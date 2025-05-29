@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     siteName: 'David Kao Portfolio',
     images: [
       {
-        url: '/og-image.svg',
+        url: 'https://folio.denehs.me/og-image.png',
         width: 1200,
         height: 630,
         alt: 'David Kao - Product Leader',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'David (Shao Hang) Kao - Product Leader',
     description: 'Portfolio showcasing professional experience, vibe coding experiments, and personal interests',
-    images: ['/og-image.svg'],
+    images: ['https://folio.denehs.me/og-image.png'],
   },
 }
 

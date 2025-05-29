@@ -25,11 +25,11 @@
   <rect x="100" y="400" width="150" height="150" fill="white" opacity="0.04" transform="rotate(30 175 475)"/>
   
   <!-- Main Text -->
-  <text x="600" y="300" font-family="Arial, sans-serif" font-size="84" font-weight="bold" fill="white" text-anchor="middle">David Kao</text>
-  
-  <!-- Subtitle -->
-  <text x="600" y="380" font-family="Arial, sans-serif" font-size="36" font-weight="300" fill="white" text-anchor="middle" opacity="0.9">Product Leader</text>
+  <text x="600" y="280" font-family="Arial, sans-serif" font-size="84" font-weight="bold" fill="white" text-anchor="middle">David Kao</text>
   
   <!-- Decorative line -->
-  <line x1="400" y1="330" x2="800" y2="330" stroke="white" stroke-width="2" opacity="0.3"/>
+  <line x1="400" y1="340" x2="800" y2="340" stroke="white" stroke-width="2" opacity="0.3"/>
+  
+  <!-- Subtitle -->
+  <text x="600" y="400" font-family="Arial, sans-serif" font-size="36" font-weight="300" fill="white" text-anchor="middle" opacity="0.9">Product Leader</text>
 </svg>
