@@ -132,8 +132,8 @@ interface Experience {
 
 export default function WorkExperience() {
   return (
-    <section id="experience" className="py-20 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="experience" className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -142,90 +142,141 @@ export default function WorkExperience() {
         >
           <h2 className="text-3xl font-bold text-center mb-12">Work Experience</h2>
           
-          <div className="space-y-8">
-            {experiences.map((exp: Experience, index) => (
-              <motion.div
-                key={exp.company}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-lg shadow-md p-6"
-              >
-                <div className="mb-4">
-                  <h3 className="text-2xl font-semibold">{exp.company}</h3>
-                  <p className="text-gray-600">{exp.location} • {exp.period}</p>
-                </div>
-                
-                {'sections' in exp && exp.sections ? (
-                  <div className="space-y-8">
-                    {exp.sections.map((section, sectionIndex) => (
-                      <div key={sectionIndex} className="relative">
-                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-blue-400"></div>
-                        <div className="pl-6">
-                          <div className="mb-4">
-                            <h4 className="text-xl font-bold text-gray-900">{section.department}</h4>
-                            <p className="text-sm font-medium text-blue-600">{section.period}</p>
-                          </div>
-                          {section.description && (
-                            <p className="text-gray-700 mb-4 leading-relaxed whitespace-pre-line">{section.description}</p>
-                          )}
-                          <div className="space-y-4">
-                            {section.roles.map((role, roleIndex) => (
-                              <div key={roleIndex} className="bg-gray-50 rounded-lg p-4">
-                                <div className="flex items-start justify-between mb-2">
-                                  <h5 className="font-semibold text-gray-900">{role.title}</h5>
-                                  {role.period && (
-                                    <span className="text-sm text-gray-500 ml-4 whitespace-nowrap">{role.period}</span>
+          <div className="relative">
+            {/* Decorative timeline line */}
+            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-200 via-purple-200 to-pink-200 hidden lg:block"></div>
+            
+            <div className="space-y-12">
+              {experiences.map((exp: Experience, index) => (
+                <motion.div
+                  key={exp.company}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  viewport={{ once: true }}
+                  className="relative"
+                >
+                  {/* Timeline dot */}
+                  <div className="absolute left-6 -top-1 w-4 h-4 bg-white border-4 border-blue-400 rounded-full hidden lg:block z-10"></div>
+                  
+                  <div className={`lg:ml-16 ${index % 2 === 0 ? 'lg:mr-0' : 'lg:mr-8'}`}>
+                    <motion.div
+                      whileHover={{ scale: 1.01 }}
+                      transition={{ type: "spring", stiffness: 400 }}
+                      className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow p-8 relative overflow-hidden"
+                    >
+                      {/* Decorative gradient accent */}
+                      <div className={`absolute top-0 ${index % 2 === 0 ? 'right-0' : 'left-0'} w-32 h-32 bg-gradient-to-br ${
+                        index === 0 ? 'from-purple-200 to-pink-200' :
+                        index === 1 ? 'from-blue-200 to-cyan-200' :
+                        index === 2 ? 'from-green-200 to-teal-200' :
+                        'from-orange-200 to-yellow-200'
+                      } opacity-30 blur-3xl`}></div>
+                      <div className="relative z-10 mb-6">
+                        <h3 className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+                          {exp.company}
+                        </h3>
+                        <div className="flex items-center gap-2 mt-1">
+                          <span className="text-gray-600">{exp.location}</span>
+                          <span className="text-gray-400">•</span>
+                          <span className="text-gray-600 font-medium">{exp.period}</span>
+                        </div>
+                      </div>
+                      
+                      {'sections' in exp && exp.sections ? (
+                        <div className="space-y-8">
+                          {exp.sections.map((section, sectionIndex) => (
+                            <div key={sectionIndex} className="relative">
+                              <div className="flex items-start gap-3 mb-4">
+                                <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mt-2"></div>
+                                <div className="flex-1">
+                                  <h4 className="text-lg font-bold text-gray-800">{section.department}</h4>
+                                  <p className="text-sm text-purple-600 font-medium">{section.period}</p>
+                                </div>
+                              </div>
+                              {section.description && (
+                                <p className="text-gray-700 mb-4 leading-relaxed whitespace-pre-line ml-5">{section.description}</p>
+                              )}
+                              <div className="space-y-3 ml-5">
+                                {section.roles.map((role, roleIndex) => (
+                                  <motion.div 
+                                    key={roleIndex} 
+                                    initial={{ opacity: 0 }}
+                                    whileInView={{ opacity: 1 }}
+                                    transition={{ delay: roleIndex * 0.1 }}
+                                    className="group"
+                                  >
+                                    <div className="bg-gradient-to-r from-gray-50 to-white rounded-xl p-4 border border-gray-100 hover:border-gray-200 transition-all group-hover:shadow-md">
+                                      <div className="flex items-start justify-between gap-4 mb-2">
+                                        <h5 className="font-semibold text-gray-800 group-hover:text-gray-900 transition-colors">
+                                          {role.title}
+                                        </h5>
+                                        {role.period && (
+                                          <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full whitespace-nowrap">
+                                            {role.period}
+                                          </span>
+                                        )}
+                                      </div>
+                                      {role.description && (
+                                        <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">{role.description}</p>
+                                      )}
+                                      {role.link && (
+                                        <a 
+                                          href={role.link.url}
+                                          target="_blank"
+                                          rel="noopener noreferrer"
+                                          className="inline-flex items-center text-sm text-purple-600 hover:text-purple-800 mt-3 font-medium transition-colors"
+                                        >
+                                          {role.link.text}
+                                          <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                          </svg>
+                                        </a>
+                                      )}
+                                    </div>
+                                  </motion.div>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      ) : exp.roles ? (
+                        <div className="space-y-3">
+                          {exp.roles.map((role, roleIndex) => (
+                            <motion.div 
+                              key={roleIndex} 
+                              initial={{ opacity: 0 }}
+                              whileInView={{ opacity: 1 }}
+                              transition={{ delay: roleIndex * 0.1 }}
+                              className="group"
+                            >
+                              <div className="flex items-start gap-3">
+                                <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mt-2"></div>
+                                <div className="flex-1 bg-gradient-to-r from-gray-50 to-white rounded-xl p-4 border border-gray-100 hover:border-gray-200 transition-all group-hover:shadow-md">
+                                  <div className="flex items-start justify-between gap-4 mb-2">
+                                    <h5 className="font-semibold text-gray-800 group-hover:text-gray-900 transition-colors">
+                                      {role.title}
+                                    </h5>
+                                    {role.period && (
+                                      <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full whitespace-nowrap">
+                                        {role.period}
+                                      </span>
+                                    )}
+                                  </div>
+                                  {role.description && (
+                                    <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">{role.description}</p>
                                   )}
                                 </div>
-                                {role.description && (
-                                  <p className="text-gray-700 text-sm leading-relaxed whitespace-pre-line">{role.description}</p>
-                                )}
-                                {role.link && (
-                                  <a 
-                                    href={role.link.url}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="inline-flex items-center text-sm text-blue-600 hover:text-blue-800 mt-3 font-medium"
-                                  >
-                                    {role.link.text}
-                                    <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                    </svg>
-                                  </a>
-                                )}
                               </div>
-                            ))}
-                          </div>
+                            </motion.div>
+                          ))}
                         </div>
-                      </div>
-                    ))}
+                      ) : null}
+                    </motion.div>
                   </div>
-                ) : exp.roles ? (
-                  <div className="space-y-4">
-                    {exp.roles.map((role, roleIndex) => (
-                      <div key={roleIndex} className="relative">
-                        <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-blue-400"></div>
-                        <div className="pl-6">
-                          <div className="bg-gray-50 rounded-lg p-4">
-                            <div className="flex items-start justify-between mb-2">
-                              <h5 className="font-semibold text-gray-900">{role.title}</h5>
-                              {role.period && (
-                                <span className="text-sm text-gray-500 ml-4 whitespace-nowrap">{role.period}</span>
-                              )}
-                            </div>
-                            {role.description && (
-                              <p className="text-gray-700 text-sm leading-relaxed whitespace-pre-line">{role.description}</p>
-                            )}
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                ) : null}
-              </motion.div>
-            ))}
+                </motion.div>
+              ))}
+            </div>
           </div>
         </motion.div>
       </div>
