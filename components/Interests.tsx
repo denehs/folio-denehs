@@ -82,13 +82,13 @@ export default function Interests() {
             </motion.div>
           </div>
           
-          {/* Freediving Section - Smaller weight */}
+          {/* Freediving Section */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="max-w-4xl mx-auto"
+            className="max-w-4xl mx-auto mb-12"
           >
             <div className="bg-gradient-to-r from-blue-50 to-cyan-50 rounded-3xl p-8 md:p-12">
               <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -143,6 +143,78 @@ export default function Interests() {
                     />
                   </motion.div>
                   <div className="absolute -bottom-2 -right-2 w-20 h-20 bg-blue-200 rounded-full blur-2xl"></div>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+          
+          {/* Kart Racing Section */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="max-w-4xl mx-auto"
+          >
+            <div className="bg-gradient-to-r from-gray-100 to-gray-50 rounded-3xl p-8 md:p-12 border border-gray-200">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div className="order-2 md:order-1 relative">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className="relative overflow-hidden rounded-2xl shadow-xl"
+                  >
+                    <Image
+                      src="/assets/interests/karting.jpg"
+                      alt="Kart racing"
+                      width={500}
+                      height={400}
+                      className="object-cover w-full h-full aspect-[5/4] filter grayscale-[50%]"
+                    />
+                  </motion.div>
+                  <div className="absolute -top-2 -left-2 w-20 h-20 bg-gray-400 rounded-full blur-2xl opacity-30"></div>
+                </div>
+                
+                <div className="order-1 md:order-2 space-y-4">
+                  <div>
+                    <h3 className="text-2xl font-semibold text-gray-900">Kart Racing</h3>
+                    <p className="text-gray-600 mt-2">Former amateur kart racer for Team GFC, competed at Sonoma Kart Track and Prairie City Kart Track</p>
+                  </div>
+                  
+                  <div className="flex flex-col gap-3">
+                    <a
+                      href="https://gfckarting.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center px-6 py-3 bg-white border-2 border-gray-900 text-gray-900 rounded-lg hover:bg-gray-900 hover:text-white transition-all font-medium group"
+                    >
+                      <div className="bg-gray-100 p-2 rounded mr-3 group-hover:bg-gray-800">
+                        <Image
+                          src="/assets/interests/gfc-logo-processed.png"
+                          alt="GFC"
+                          width={50}
+                          height={50}
+                          className="object-contain"
+                        />
+                      </div>
+                      <span className="text-sm">Team GFC</span>
+                      <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                    
+                    <a
+                      href="https://pckarting.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center px-6 py-3 bg-white border-2 border-red-600 text-red-600 rounded-lg hover:bg-red-600 hover:text-white transition-all text-sm font-medium"
+                    >
+                      Prairie City Kart Track
+                      <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
