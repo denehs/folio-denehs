@@ -5,10 +5,33 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://folio.denehs.me'),
   title: 'David (Shao Hang) Kao - Product Leader',
   description: 'Portfolio of David Kao showcasing professional experience, vibe coding experiments, and personal interests',
   icons: {
     icon: '/favicon.svg',
+  },
+  openGraph: {
+    title: 'David (Shao Hang) Kao - Product Leader',
+    description: 'Portfolio showcasing professional experience, vibe coding experiments, and personal interests',
+    url: 'https://folio.denehs.me',
+    siteName: 'David Kao Portfolio',
+    images: [
+      {
+        url: '/og-image.svg',
+        width: 1200,
+        height: 630,
+        alt: 'David Kao - Product Leader',
+      }
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'David (Shao Hang) Kao - Product Leader',
+    description: 'Portfolio showcasing professional experience, vibe coding experiments, and personal interests',
+    images: ['/og-image.svg'],
   },
 }
 

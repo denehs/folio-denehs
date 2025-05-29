@@ -1,0 +1,35 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <!-- Gradient Background -->
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8B5CF6;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Subtle pattern -->
+    <pattern id="circlePattern" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse" opacity="0.1">
+      <circle cx="50" cy="50" r="2" fill="white"/>
+    </pattern>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+  
+  <!-- Pattern overlay -->
+  <rect width="1200" height="630" fill="url(#circlePattern)"/>
+  
+  <!-- Geometric shapes -->
+  <circle cx="150" cy="150" r="100" fill="white" opacity="0.05"/>
+  <circle cx="1050" cy="480" r="150" fill="white" opacity="0.05"/>
+  <rect x="900" y="100" width="200" height="200" fill="white" opacity="0.03" transform="rotate(45 1000 200)"/>
+  <rect x="100" y="400" width="150" height="150" fill="white" opacity="0.04" transform="rotate(30 175 475)"/>
+  
+  <!-- Main Text -->
+  <text x="600" y="300" font-family="Arial, sans-serif" font-size="84" font-weight="bold" fill="white" text-anchor="middle">David Kao</text>
+  
+  <!-- Subtitle -->
+  <text x="600" y="380" font-family="Arial, sans-serif" font-size="36" font-weight="300" fill="white" text-anchor="middle" opacity="0.9">Product Leader</text>
+  
+  <!-- Decorative line -->
+  <line x1="400" y1="330" x2="800" y2="330" stroke="white" stroke-width="2" opacity="0.3"/>
+</svg>
