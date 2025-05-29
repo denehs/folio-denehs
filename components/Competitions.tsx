@@ -3,14 +3,14 @@
 import { motion } from 'framer-motion'
 
 const competitions = [
-  { event: 'ACM ICPC Asia Regional - Kaohsiung', award: 'Silver Award', date: 'Jan 2006' },
-  { event: 'ACM ICPC Asia Regional - Shanghai', award: 'Bronze Award', date: 'Jan 2006' },
-  { event: 'National Computer Programming Contest', award: '1st place', date: 'Jan 2006' },
-  { event: 'ACM ICPC Asia Regional - Taipei', award: '7th place', date: 'Jan 2005' },
-  { event: 'National Computer Programming Contest', award: '1st place', date: 'Jan 2005' },
-  { event: 'ACM ICPC Asia Regional - Beijing', award: '15th place', date: 'Jan 2004' },
-  { event: 'ACM ICPC Asia Regional - Taipei', award: '10th place', date: 'Jan 2004' },
-  { event: 'National Computer Programming Contest', award: '2nd place', date: 'Jan 2004' }
+  { event: 'ACM ICPC Asia Regional - Kaohsiung', award: 'Silver Award', date: '2006' },
+  { event: 'ACM ICPC Asia Regional - Shanghai', award: 'Bronze Award', date: '2006' },
+  { event: 'National Computer Programming Contest', award: '1st place', date: '2006' },
+  { event: 'ACM ICPC Asia Regional - Taipei', award: '7th place', date: '2005' },
+  { event: 'National Computer Programming Contest', award: '1st place', date: '2005' },
+  { event: 'ACM ICPC Asia Regional - Beijing', award: '15th place', date: '2004' },
+  { event: 'ACM ICPC Asia Regional - Taipei', award: '10th place', date: '2004' },
+  { event: 'National Computer Programming Contest', award: '2nd place', date: '2004' }
 ]
 
 export default function Competitions() {
