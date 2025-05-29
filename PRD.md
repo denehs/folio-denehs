@@ -1,0 +1,135 @@
+# **Product Requirements Document: David (Shao Hang) Kao's Portfolio Website**
+
+## **1\. Introduction**
+
+This document outlines the requirements for David (Shao Hang) Kao's personal portfolio website. The primary goal of this website is to showcase David's professional experience, technical skills, personal projects, and interests in a clear, concise, and engaging manner.
+
+## **2\. Goals**
+
+* To provide a comprehensive overview of David's career and technical capabilities.  
+* To highlight key achievements and contributions in various roles.  
+* To showcase personal "vibe coding" experiments and their unique development process.  
+* To share personal interests and hobbies.  
+* To provide easy access to David's professional profiles (LinkedIn, GitHub).
+
+## **3\. Target Audience**
+
+Potential employers, recruiters, collaborators, and individuals interested in David's work and background.
+
+## **4\. Key Features & Content**
+
+### **4.1. Header/Navigation**
+
+* **Name:** David (Shao Hang) Kao  
+* **Summary:** "Engineering & Product Leader"  
+* **Contact Information:**  
+  * LinkedIn: www.linkedin.com/in/david-shao-hang-kao-bb4a4a27 (Link to be provided in footer as well)
+
+### **4.2. Work Experience**
+
+This section will detail David's professional journey, highlighting key roles and accomplishments.
+
+* **Meta (California, US) (March 2014 \- Present)**  
+  * **Wearable Product (March 2020 \- Present)**  
+    * **Individual Contributor** (June 2025 \- Present)  
+      * Description: Focusing on individual contributions to wearable product development.  
+    * **Senior Engineering Manager** (March 2020 \- May 2025\)  
+      * Description: Established high-performant team from 0 to \~40 with focus on user-facing wearable products.  
+  * **NPE (September 2019 \- March 2020\)**  
+    * **Senior Staff Software Engineer, NPE**  
+      * Description: Explored new products with NPE team.  
+  * **Facebook Search (March 2014 \- August 2019\)**  
+    * Description: Focusing on world-class search products across web, Android, iOS, and lite interfaces. Evolved Facebook's search experience from profile search only toward content (posts/photo/video, etc.) search. Involved in rapid product experimentations and launched new search experiences that serve billions of queries per day.  
+    * **Senior Engineering Manager** (January 2019 \- August 2019\)  
+    * **Engineering Manager** (January 2017 \- December 2018\)  
+    * **Engineering Manager (M0)** (June 2016 \- December 2016\)  
+    * **Senior Software Engineer** (January 2015 \- May 2016\)  
+    * **Software Engineer** (March 2014 \- December 2014\)  
+* **Mozilla Corporation (Taipei, Taiwan) (September 2013 \- November 2013\)**  
+  * **Software Engineer**  
+    * Description: Firefox OS \- SNTP, EAP-SIM.  
+* **Garmin International (Taipei, Taiwan) (October 2010 \- August 2013\)**  
+  * **Adv. Software Engineer**  
+    * Description: Contributed to Map Technology and Mobile Applications teams, enhancing phone number search, reducing routing calculation time (15%-50%), and working on Garmin's next-generation navigation core. Developed "Ferome" mobile app and contributed to StreetPilot for iOS/Android and Monterra. Promoted to Advanced Software Engineer in 2 years and 2 months.  
+* **ESP Style (Taipei, Taiwan) (May 2008 \- July 2010\)**  
+  * **Web Developer**  
+    * Description:  
+      * Server-side applications (in PHP+MySQL) for customers, mainly focusing on content management systems, along with some other functions like chatroom, guest book, e-commerce, etc.  
+      * Frontend works using jQuery.
+
+### **4.3. Education (Hidden by Default, Expandable)**
+
+This section will be collapsed by default and can be expanded by the user.
+
+* **National Taiwan University**  
+  * Master of Science (MS), Computer Science (2008-2010)  
+  * Bachelor of Science (BS), Computer Science (2004-2008)  
+* **National Experimental High School at Hsinchu Science Park**
+
+### **4.4. Programming Competition Records (Hidden by Default, Expandable)**
+
+This section will be collapsed by default and can be expanded by the user.
+
+* **ACM ICPC Asia Regional \- Kaohsiung: Silver Award** (Jan 2006\)  
+* **ACM ICPC Asia Regional \- Shanghai: Bronze Award** (Jan 2006\)  
+* **National Computer Programming Contest: 1st place** (Jan 2006\)  
+* **ACM ICPC Asia Regional \- Taipei: 7th place** (Jan 2005\)  
+* **National Computer Programming Contest: 1st place** (Jan 2005\)  
+* **ACM ICPC Asia Regional \- Beijing: 15th place** (Jan 2004\)  
+* **ACM ICPC Asia Regional \- Taipei: 10th place** (Jan 2004\)  
+* **National Computer Programming Contest: 2nd place** (Jan 2004\)
+
+### **4.5. Vibe Coding Experiments**
+
+This section will highlight two recent personal projects.
+
+* **Future Dollar**  
+  * Description: A simple web app-based calculator to help people with better spending decisions.  
+  * Development Process: Code 100% generated by Cursor \+ Claude 4, completed within 1 day. Gemini created the PRD, and an AI agent built the app, with light code review and manual configurations on GitHub and Cloudflare (no human coding or debugging involved).  
+  * Live Demo: https://futuredollar.denehs.me/  
+  * GitHub Repo: https://github.com/denehs/future-dollar  
+  * Screenshots: /Users/davidkao/Documents/Portfolio/futuredollar  
+* **Quick Tax**  
+  * Description: A simplified tax software to help California tech employees calculate their estimated tax.  
+  * Development Process: Code 100% generated by Claude Code. MVP completed within 2 days, with more enhancements added later, including a wrapped iOS app. Gemini created the PRD, and an AI agent built the app, with light code review and manual configurations on GitHub and Cloudflare (no human coding or debugging involved).  
+  * Live Demo: http://quicktax.denehs.me/  
+  * GitHub Repo: https://github.com/denehs/quick-tax  
+  * Screenshots & App Icon: /Users/davidkao/Documents/Portfolio/Quicktax
+
+### **4.6. Personal Interests**
+
+This section will provide a glimpse into David's personal life.
+
+* **Cat Dad:** A proud dad of 4 cats, with the eldest one being 16 years old.  
+  * Photos: /Users/davidkao/Documents/Portfolio/Cat  
+* **Freediving:** An AIDA 2 certified freediver.  
+  * Certificate: https://eos.aidainternational.org/print\_certificate/230877  
+  * Personal Record: Freedive to 13m at Lake Berryessa.
+
+### **4.7. Footer**
+
+* Links to:  
+  * LinkedIn Profile: https://www.linkedin.com/in/david-shao-hang-kao-bb4a4a27/  
+  * GitHub Profile: https://github.com/denehs
+
+## **5\. Technical Requirements**
+
+* **Responsive Design:** The website must be fully responsive and optimized for viewing on various devices (desktop, tablet, mobile).  
+* **Performance:** The website should load quickly and efficiently.  
+* **Accessibility:** Adhere to basic accessibility standards.  
+* **Technology Stack (Suggested):** Modern web technologies (e.g., React, Next.js, or plain HTML/CSS/JavaScript with a lightweight framework for animations/interactivity). Tailwind CSS is recommended for styling.  
+* **Deployment:** The website will be deployed to GitHub Pages and hosted under the custom domain folio.denehs.me. The build and deployment process will be automated using GitHub Actions.
+
+## **6\. Design & User Experience (UX)**
+
+* **Clean and Professional:** A clean, modern, and professional aesthetic.  
+* **Intuitive Navigation:** Easy-to-understand navigation to allow users to find information quickly.  
+* **Expandable Sections:** Education and Programming Competition Records should be clearly marked as expandable/collapsible.  
+* **Visual Appeal:** Use of images and potentially subtle animations to enhance the user experience, especially for the "Vibe Coding Experiments" and "Personal Interests" sections.  
+* **Content Balance:** The website's layout and content weighting should aim for a somewhat balanced representation across professional experiences, vibe coding projects, and personal interests.
+
+## **7\. Future Considerations**
+
+* Adding a blog or articles section for deeper dives into technical topics or project insights.  
+* Implementing a contact form.  
+* Further enhancing the visual presentation of projects with interactive elements.
