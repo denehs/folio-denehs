@@ -5,8 +5,6 @@ import Header from '@/components/Header'
 import VibeCoding from '@/components/VibeCoding'
 import Interests from '@/components/Interests'
 import WorkExperience from '@/components/WorkExperience'
-import Education from '@/components/Education'
-import Competitions from '@/components/Competitions'
 import Footer from '@/components/Footer'
 
 export default function Home() {
@@ -37,8 +35,6 @@ export default function Home() {
       <VibeCoding />
       <Interests />
       <WorkExperience />
-      <Education />
-      <Competitions />
       
       <Footer />
     </>

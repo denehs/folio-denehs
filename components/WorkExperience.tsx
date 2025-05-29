@@ -105,6 +105,31 @@ const experiences = [
   }
 ]
 
+const education = [
+  {
+    institution: 'National Taiwan University',
+    degrees: [
+      { title: 'Master of Science (MS), Computer Science', period: '2008-2010' },
+      { title: 'Bachelor of Science (BS), Computer Science', period: '2004-2008' }
+    ]
+  },
+  {
+    institution: 'National Experimental High School at Hsinchu Science Park',
+    degrees: []
+  }
+]
+
+const competitions = [
+  { event: 'ACM ICPC Asia Regional - Kaohsiung', award: 'Silver Award', date: '2006' },
+  { event: 'ACM ICPC Asia Regional - Shanghai', award: 'Bronze Award', date: '2006' },
+  { event: 'National Computer Programming Contest', award: '1st place', date: '2006' },
+  { event: 'ACM ICPC Asia Regional - Taipei', award: '7th place', date: '2005' },
+  { event: 'National Computer Programming Contest', award: '1st place', date: '2005' },
+  { event: 'ACM ICPC Asia Regional - Beijing', award: '15th place', date: '2004' },
+  { event: 'ACM ICPC Asia Regional - Taipei', award: '10th place', date: '2004' },
+  { event: 'National Computer Programming Contest', award: '2nd place', date: '2004' }
+]
+
 interface Role {
   title: string
   period?: string
@@ -140,13 +165,14 @@ export default function WorkExperience() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold text-center mb-12">Work Experience</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Experience</h2>
           
           <div className="relative">
             {/* Decorative timeline line */}
             <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-200 via-purple-200 to-pink-200 hidden lg:block"></div>
             
             <div className="space-y-12">
+              {/* Work Experiences */}
               {experiences.map((exp: Experience, index) => (
                 <motion.div
                   key={exp.company}
@@ -276,6 +302,120 @@ export default function WorkExperience() {
                   </div>
                 </motion.div>
               ))}
+
+              {/* Education Section */}
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="relative"
+              >
+                {/* Timeline dot */}
+                <div className="absolute left-6 -top-1 w-4 h-4 bg-white border-4 border-purple-400 rounded-full hidden lg:block z-10"></div>
+                
+                <div className="lg:ml-16">
+                  <motion.div
+                    whileHover={{ scale: 1.01 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                    className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow p-8 relative overflow-hidden"
+                  >
+                    {/* Decorative gradient accent */}
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-indigo-200 to-purple-200 opacity-30 blur-3xl"></div>
+                    
+                    <div className="relative z-10">
+                      <h3 className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-6">
+                        Education
+                      </h3>
+                      
+                      <div className="space-y-6">
+                        {education.map((edu, index) => (
+                          <motion.div
+                            key={index}
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            transition={{ delay: index * 0.1 }}
+                            className="flex items-start gap-3"
+                          >
+                            <div className="w-2 h-2 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full mt-2"></div>
+                            <div className="flex-1">
+                              <h4 className="text-lg font-bold text-gray-800">{edu.institution}</h4>
+                              {edu.degrees.length > 0 ? (
+                                <div className="mt-2 space-y-2">
+                                  {edu.degrees.map((degree, i) => (
+                                    <div key={i} className="bg-gradient-to-r from-gray-50 to-white rounded-lg p-3 border border-gray-100">
+                                      <p className="text-gray-800 font-medium">{degree.title}</p>
+                                      <p className="text-sm text-purple-600">{degree.period}</p>
+                                    </div>
+                                  ))}
+                                </div>
+                              ) : (
+                                <p className="text-gray-600 mt-1">High School Diploma</p>
+                              )}
+                            </div>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+              </motion.div>
+
+              {/* Competitions Section */}
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6 }}
+                viewport={{ once: true }}
+                className="relative"
+              >
+                {/* Timeline dot */}
+                <div className="absolute left-6 -top-1 w-4 h-4 bg-white border-4 border-orange-400 rounded-full hidden lg:block z-10"></div>
+                
+                <div className="lg:ml-16">
+                  <motion.div
+                    whileHover={{ scale: 1.01 }}
+                    transition={{ type: "spring", stiffness: 400 }}
+                    className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow p-8 relative overflow-hidden"
+                  >
+                    {/* Decorative gradient accent */}
+                    <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-yellow-200 to-orange-200 opacity-30 blur-3xl"></div>
+                    
+                    <div className="relative z-10">
+                      <h3 className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-6">
+                        Competition Records
+                      </h3>
+                      
+                      <div className="grid gap-3 sm:grid-cols-2">
+                        {competitions.map((comp, index) => (
+                          <motion.div
+                            key={index}
+                            initial={{ opacity: 0, scale: 0.95 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.3, delay: index * 0.05 }}
+                            viewport={{ once: true }}
+                            className="flex items-center justify-between p-4 bg-gradient-to-r from-gray-50 to-white rounded-lg border border-gray-100 hover:border-gray-200 transition-all hover:shadow-md"
+                          >
+                            <div className="flex-1">
+                              <p className="text-sm font-medium text-gray-800">{comp.event}</p>
+                              <p className="text-xs text-gray-600">{comp.date}</p>
+                            </div>
+                            <span className={`ml-3 px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap ${
+                              comp.award.includes('1st') ? 'bg-yellow-100 text-yellow-800' :
+                              comp.award.includes('2nd') ? 'bg-gray-100 text-gray-800' :
+                              comp.award.includes('Silver') ? 'bg-gray-100 text-gray-800' :
+                              comp.award.includes('Bronze') ? 'bg-orange-100 text-orange-800' :
+                              'bg-blue-100 text-blue-800'
+                            }`}>
+                              {comp.award}
+                            </span>
+                          </motion.div>
+                        ))}
+                      </div>
+                    </div>
+                  </motion.div>
+                </div>
+              </motion.div>
             </div>
           </div>
         </motion.div>
