@@ -11,13 +11,13 @@ const experiences = [
     period: 'March 2014 - Present',
     sections: [
       {
-        department: 'Wearable Product',
+        department: 'Wearable',
         period: 'March 2020 - Present',
         roles: [
           {
             title: 'Individual Contributor',
             period: 'June 2025 - Present',
-            description: 'Wearable product development.'
+            description: 'Wearable Product.'
           },
           {
             title: 'Senior Engineering Manager',
@@ -91,7 +91,7 @@ const experiences = [
       {
         title: 'Adv. Software Engineer',
         period: 'October 2010 - August 2013',
-        description: 'Contributed to Map Technology and Mobile Applications teams, enhancing phone number search, reducing routing calculation time (15%-50%), and working on Garmin\'s next-generation navigation core. Developed "Ferome" mobile app and contributed to StreetPilot for iOS/Android and Monterra. Promoted to Advanced Software Engineer in 2 years and 2 months.'
+        description: 'Contributed to Map Technology and Mobile Applications teams, enhancing phone number search, reducing routing calculation time (15%-50%), and working on Garmin\'s next-generation navigation core. Developed "Ferome" mobile app and contributed to StreetPilot for iOS/Android and Monterra, an Android powered outdoor navigation device.'
       }
     ]
   },
@@ -166,20 +166,20 @@ interface Experience {
 export default function WorkExperience() {
   return (
     <section id="experience" className="py-20 bg-gradient-to-b from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold text-center mb-12">Experience</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12">Experience</h2>
           
           <div className="relative">
             {/* Decorative timeline line */}
             <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-blue-200 via-purple-200 to-pink-200 hidden lg:block"></div>
             
-            <div className="space-y-12">
+            <div className="space-y-8 md:space-y-12">
               {/* Work Experiences */}
               {experiences.map((exp: Experience, index) => (
                 <motion.div
@@ -197,7 +197,7 @@ export default function WorkExperience() {
                     <motion.div
                       whileHover={{ scale: 1.01 }}
                       transition={{ type: "spring", stiffness: 400 }}
-                      className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow p-8 relative overflow-hidden"
+                      className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow p-4 md:p-8 relative overflow-hidden"
                     >
                       {/* Decorative gradient accent */}
                       <div className={`absolute top-0 ${index % 2 === 0 ? 'right-0' : 'left-0'} w-32 h-32 bg-gradient-to-br ${
@@ -206,13 +206,13 @@ export default function WorkExperience() {
                         index === 2 ? 'from-green-200 to-teal-200' :
                         'from-orange-200 to-yellow-200'
                       } opacity-30 blur-3xl`}></div>
-                      <div className="relative z-10 mb-6">
+                      <div className="relative z-10 mb-4 md:mb-6">
                         <div className="flex items-start justify-between">
                           <div>
-                            <h3 className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+                            <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent leading-tight">
                               {exp.company}
                             </h3>
-                            <div className="flex items-center gap-2 mt-1">
+                            <div className="flex flex-wrap items-center gap-2 mt-1 text-sm md:text-base">
                               <span className="text-gray-600">{exp.location}</span>
                               <span className="text-gray-400">•</span>
                               <span className="text-gray-600 font-medium">{exp.period}</span>
@@ -256,7 +256,7 @@ export default function WorkExperience() {
                                     className="group"
                                   >
                                     <div className="bg-gradient-to-r from-gray-50 to-white rounded-xl p-4 border border-gray-100 hover:border-gray-200 transition-all group-hover:shadow-md">
-                                      <div className="flex items-start justify-between gap-4 mb-2">
+                                      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 sm:gap-4 mb-2">
                                         <h5 className="font-semibold text-gray-800 group-hover:text-gray-900 transition-colors">
                                           {role.title}
                                         </h5>
@@ -302,12 +302,12 @@ export default function WorkExperience() {
                               <div className="flex items-start gap-3">
                                 <div className="w-2 h-2 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full mt-2"></div>
                                 <div className="flex-1 bg-gradient-to-r from-gray-50 to-white rounded-xl p-4 border border-gray-100 hover:border-gray-200 transition-all group-hover:shadow-md">
-                                  <div className="flex items-start justify-between gap-4 mb-2">
+                                  <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1 sm:gap-4 mb-2">
                                     <h5 className="font-semibold text-gray-800 group-hover:text-gray-900 transition-colors">
                                       {role.title}
                                     </h5>
                                     {role.period && (
-                                      <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full whitespace-nowrap">
+                                      <span className="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded-full whitespace-nowrap self-start">
                                         {role.period}
                                       </span>
                                     )}
@@ -341,13 +341,13 @@ export default function WorkExperience() {
                   <motion.div
                     whileHover={{ scale: 1.01 }}
                     transition={{ type: "spring", stiffness: 400 }}
-                    className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow p-8 relative overflow-hidden"
+                    className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow p-4 md:p-8 relative overflow-hidden"
                   >
                     {/* Decorative gradient accent */}
                     <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-indigo-200 to-purple-200 opacity-30 blur-3xl"></div>
                     
                     <div className="relative z-10">
-                      <h3 className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-6">
+                      <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-4 md:mb-6">
                         Education
                       </h3>
                       
@@ -362,7 +362,7 @@ export default function WorkExperience() {
                           >
                             <div className="w-2 h-2 bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full mt-2"></div>
                             <div className="flex-1">
-                              <div className="flex items-start justify-between">
+                              <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-3">
                                 <div className="flex-1">
                                   <h4 className="text-lg font-bold text-gray-800">{edu.institution}</h4>
                                   {edu.degrees.length > 0 ? (
@@ -379,13 +379,13 @@ export default function WorkExperience() {
                                   )}
                                 </div>
                                 {edu.logo && (
-                                  <div className="ml-4 p-2 bg-white rounded-lg shadow-sm">
+                                  <div className="sm:ml-4 p-2 bg-white rounded-lg shadow-sm self-start">
                                     <Image
                                       src={edu.logo}
                                       alt={`${edu.institution} logo`}
-                                      width={edu.institution.includes('Taiwan') ? 120 : 48}
-                                      height={48}
-                                      className="object-contain"
+                                      width={edu.institution.includes('Taiwan') ? 80 : 48}
+                                      height={edu.institution.includes('Taiwan') ? 30 : 48}
+                                      className="object-contain max-w-[80px] sm:max-w-none"
                                     />
                                   </div>
                                 )}
@@ -414,17 +414,17 @@ export default function WorkExperience() {
                   <motion.div
                     whileHover={{ scale: 1.01 }}
                     transition={{ type: "spring", stiffness: 400 }}
-                    className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow p-8 relative overflow-hidden"
+                    className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow p-4 md:p-8 relative overflow-hidden"
                   >
                     {/* Decorative gradient accent */}
                     <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-yellow-200 to-orange-200 opacity-30 blur-3xl"></div>
                     
                     <div className="relative z-10">
-                      <h3 className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-6">
+                      <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-4 md:mb-6">
                         Competition Records
                       </h3>
                       
-                      <div className="grid gap-3 sm:grid-cols-2">
+                      <div className="grid gap-2 sm:gap-3 sm:grid-cols-2">
                         {competitions.map((comp, index) => (
                           <motion.div
                             key={index}
@@ -432,13 +432,13 @@ export default function WorkExperience() {
                             whileInView={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.3, delay: index * 0.05 }}
                             viewport={{ once: true }}
-                            className="flex items-center justify-between p-4 bg-gradient-to-r from-gray-50 to-white rounded-lg border border-gray-100 hover:border-gray-200 transition-all hover:shadow-md"
+                            className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-3 sm:p-4 gap-2 bg-gradient-to-r from-gray-50 to-white rounded-lg border border-gray-100 hover:border-gray-200 transition-all hover:shadow-md"
                           >
                             <div className="flex-1">
                               <p className="text-sm font-medium text-gray-800">{comp.event}</p>
                               <p className="text-xs text-gray-600">{comp.date}</p>
                             </div>
-                            <span className={`ml-3 px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap ${
+                            <span className={`sm:ml-3 px-2 sm:px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap ${
                               comp.award.includes('1st') ? 'bg-yellow-100 text-yellow-800' :
                               comp.award.includes('2nd') ? 'bg-gray-100 text-gray-800' :
                               comp.award.includes('Silver') ? 'bg-gray-100 text-gray-800' :

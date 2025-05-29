@@ -196,12 +196,6 @@ export default function VibeCoding() {
                     </motion.div>
                   </div>
                   
-                  <div className="absolute -bottom-4 -right-4 bg-white rounded-full p-3 shadow-lg">
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                      <span className="text-xs font-medium text-gray-700">iOS App Available</span>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
