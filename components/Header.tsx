@@ -7,8 +7,6 @@ const sections = [
   { id: 'vibe-coding', name: 'Vibe Coding' },
   { id: 'interests', name: 'Interests' },
   { id: 'experience', name: 'Experience' },
-  { id: 'education', name: 'Education' },
-  { id: 'competitions', name: 'Competitions' },
 ]
 
 export default function Header() {

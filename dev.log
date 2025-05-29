@@ -7,7 +7,79 @@
    - Network:      http://192.168.1.35:3000
 
  ✓ Starting...
- ✓ Ready in 1022ms
+ ✓ Ready in 1012ms
  ○ Compiling / ...
- ✓ Compiled / in 861ms (1453 modules)
- GET / 200 in 1055ms
+ ⨯ ./components/WorkExperience.tsx
+Error:   [31mx[0m Unexpected token `section`. Expected jsx identifier
+     ,-[[36;1;4m/Users/davidkao/Codes/folio-denehs/components/WorkExperience.tsx[0m:131:1]
+ [2m128[0m |   const [showCompetitions, setShowCompetitions] = useState(false)
+ [2m129[0m | 
+ [2m130[0m |   return (
+ [2m131[0m |     <section id="experience" className="py-20 bg-gray-50">
+     : [35;1m     ^^^^^^^[0m
+ [2m132[0m |       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+ [2m133[0m |         <motion.div
+ [2m134[0m |           initial={{ opacity: 0, y: 20 }}
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/WorkExperience.tsx
+./app/page.tsx
+ ⨯ ./components/WorkExperience.tsx
+Error:   [31mx[0m Unexpected token `section`. Expected jsx identifier
+     ,-[[36;1;4m/Users/davidkao/Codes/folio-denehs/components/WorkExperience.tsx[0m:131:1]
+ [2m128[0m |   const [showCompetitions, setShowCompetitions] = useState(false)
+ [2m129[0m | 
+ [2m130[0m |   return (
+ [2m131[0m |     <section id="experience" className="py-20 bg-gray-50">
+     : [35;1m     ^^^^^^^[0m
+ [2m132[0m |       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+ [2m133[0m |         <motion.div
+ [2m134[0m |           initial={{ opacity: 0, y: 20 }}
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/WorkExperience.tsx
+./app/page.tsx
+ ⨯ ./components/WorkExperience.tsx
+Error:   [31mx[0m Unexpected token `section`. Expected jsx identifier
+     ,-[[36;1;4m/Users/davidkao/Codes/folio-denehs/components/WorkExperience.tsx[0m:131:1]
+ [2m128[0m |   const [showCompetitions, setShowCompetitions] = useState(false)
+ [2m129[0m | 
+ [2m130[0m |   return (
+ [2m131[0m |     <section id="experience" className="py-20 bg-gray-50">
+     : [35;1m     ^^^^^^^[0m
+ [2m132[0m |       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+ [2m133[0m |         <motion.div
+ [2m134[0m |           initial={{ opacity: 0, y: 20 }}
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./components/WorkExperience.tsx
+./app/page.tsx
+ HEAD / 500 in 3046ms
+ ✓ Compiled /_error in 577ms (1801 modules)
+ HEAD / 200 in 180ms
+ GET / 200 in 74ms
+ GET /.well-known/appspecific/com.chrome.devtools.json 404 in 24ms
+ ✓ Compiled in 169ms (960 modules)
+ GET / 200 in 8ms
+ ✓ Compiled in 86ms (960 modules)
+ GET / 200 in 7ms
+ ✓ Compiled in 212ms (1754 modules)
+ GET / 200 in 59ms
+ ✓ Compiled in 326ms (1754 modules)
+ GET / 200 in 30ms
+ ✓ Compiled in 273ms (1758 modules)
+ GET / 200 in 39ms
+ HEAD / 200 in 74ms
+ GET / 200 in 74ms
