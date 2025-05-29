@@ -43,7 +43,7 @@ export default function Header() {
             className="flex-shrink-0"
           >
             <h1 className="text-xl font-bold">David Kao</h1>
-            <p className="text-sm text-gray-600">Engineering & Product Leader</p>
+            <p className="text-sm text-gray-600">Product Leader</p>
           </motion.div>
           
           <nav className="hidden md:block">
