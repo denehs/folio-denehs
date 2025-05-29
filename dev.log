@@ -1,0 +1,13 @@
+
+> folio-denehs@1.0.0 dev
+> next dev
+
+   ▲ Next.js 15.3.2
+   - Local:        http://localhost:3000
+   - Network:      http://192.168.1.35:3000
+
+ ✓ Starting...
+ ✓ Ready in 1022ms
+ ○ Compiling / ...
+ ✓ Compiled / in 861ms (1453 modules)
+ GET / 200 in 1055ms
