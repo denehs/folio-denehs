@@ -3,7 +3,7 @@ import { getAssetFromKV } from '@cloudflare/kv-asset-handler'
 // Import the Next.js build
 import nextjsManifest from '__STATIC_CONTENT_MANIFEST'
 
-export default {
+const worker = {
   async fetch(request, env, ctx) {
     try {
       // Handle static assets first
@@ -28,3 +28,5 @@ export default {
     }
   },
 }
+
+export default worker
