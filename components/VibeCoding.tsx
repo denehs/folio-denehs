@@ -150,7 +150,7 @@ export default function VibeCoding() {
                       </svg>
                     </a>
                     <a
-                      href="https://github.com/denehs/quick-tax"
+                      href="https://github.com/Nekopan-Lab/quick-tax"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-2 px-6 py-3 bg-white text-gray-700 rounded-full border-2 border-gray-300 hover:border-gray-400 transition-colors font-medium"
