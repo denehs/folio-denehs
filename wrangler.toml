@@ -10,8 +10,8 @@ bucket = "./out"
 [env.production]
 name = "folio-denehs-production"
 routes = [
-  { pattern = "denehs.me/*", zone_name = "denehs.me" },
-  { pattern = "www.denehs.me/*", zone_name = "denehs.me" }
+  "denehs.me/*",
+  "www.denehs.me/*"
 ]
 
 # Build configuration
