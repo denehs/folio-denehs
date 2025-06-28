@@ -1,0 +1,31 @@
+#:schema node_modules/wrangler/config-schema.json
+name = "folio-denehs"
+main = ".next/standalone/server.js"
+compatibility_date = "2024-10-31"
+compatibility_flags = ["nodejs_compat"]
+
+[env.production]
+name = "folio-denehs-production"
+routes = [
+  { pattern = "denehs.me", custom_domain = true },
+  { pattern = "www.denehs.me", custom_domain = true }
+]
+
+[[env.production.services]]
+binding = "ASSETS"
+service = "folio-denehs-assets"
+
+[build]
+command = "npm run build"
+
+# Enable Node.js compatibility for Next.js
+[build.upload]
+format = "service-worker"
+
+# Environment variables can be set here if needed
+[vars]
+NODE_ENV = "production"
+
+# Observability configuration
+[observability]
+enabled = true

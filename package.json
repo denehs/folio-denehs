@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/denehs/folio-denehs/issues"
   },
-  "homepage": "https://github.com/denehs/folio-denehs#readme",
+  "homepage": "https://denehs.me",
   "description": "",
   "dependencies": {
     "@types/node": "^22.15.24",

@@ -25,7 +25,7 @@ cd /Users/davidkao/Codes/folio-denehs && npm run dev > dev.log 2>&1 & echo $!
 - **URL**: http://localhost:3000/
 - **Tech Stack**: Next.js, TypeScript, Tailwind CSS, Framer Motion
 - **Build Command**: `npm run build`
-- **Output Directory**: `out/` (for GitHub Pages deployment)
+- **Output Directory**: `.next/` (for Cloudflare Workers deployment)
 
 ## Key Commands
 
@@ -37,5 +37,5 @@ cd /Users/davidkao/Codes/folio-denehs && npm run dev > dev.log 2>&1 & echo $!
 
 1. Always keep the dev server running for user verification
 2. The site uses Tailwind CSS v3 (not v4) for compatibility
-3. Static export is configured for GitHub Pages deployment
-4. Custom domain will be folio.denehs.me
+3. Deployment configured for Cloudflare Workers with git integration
+4. Custom domain is denehs.me

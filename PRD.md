@@ -118,7 +118,7 @@ This section will provide a glimpse into David's personal life.
 * **Performance:** The website should load quickly and efficiently.  
 * **Accessibility:** Adhere to basic accessibility standards.  
 * **Technology Stack (Suggested):** Modern web technologies (e.g., React, Next.js, or plain HTML/CSS/JavaScript with a lightweight framework for animations/interactivity). Tailwind CSS is recommended for styling.  
-* **Deployment:** The website will be deployed to GitHub Pages and hosted under the custom domain folio.denehs.me. The build and deployment process will be automated using GitHub Actions.
+* **Deployment:** The website will be deployed to Cloudflare Workers and hosted under the custom domain denehs.me. The build and deployment process will be automated using Cloudflare's git integration.
 
 ## **6\. Design & User Experience (UX)**
 
