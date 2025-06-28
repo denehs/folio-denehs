@@ -34,6 +34,8 @@
     "typescript": "^5.8.3"
   },
   "devDependencies": {
+    "@cloudflare/kv-asset-handler": "^0.4.0",
+    "@cloudflare/next-on-pages": "^1.13.12",
     "eslint": "^9.27.0",
     "eslint-config-next": "^15.3.2"
   }

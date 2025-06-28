@@ -1,26 +1,22 @@
-#:schema node_modules/wrangler/config-schema.json
 name = "folio-denehs"
-main = ".next/standalone/server.js"
+main = "src/index.js"
 compatibility_date = "2024-10-31"
 compatibility_flags = ["nodejs_compat"]
+
+# Static assets configuration
+[site]
+bucket = "./out"
 
 [env.production]
 name = "folio-denehs-production"
 routes = [
-  { pattern = "denehs.me", custom_domain = true },
-  { pattern = "www.denehs.me", custom_domain = true }
+  { pattern = "denehs.me/*", zone_name = "denehs.me" },
+  { pattern = "www.denehs.me/*", zone_name = "denehs.me" }
 ]
 
-[[env.production.services]]
-binding = "ASSETS"
-service = "folio-denehs-assets"
-
+# Build configuration
 [build]
 command = "npm run build"
-
-# Enable Node.js compatibility for Next.js
-[build.upload]
-format = "service-worker"
 
 # Environment variables can be set here if needed
 [vars]

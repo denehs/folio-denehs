@@ -1,9 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   // Cloudflare Workers configuration
+  output: 'export',
   images: {
-    formats: ['image/avif', 'image/webp'],
+    unoptimized: true,
   },
+  assetPrefix: undefined,
+  trailingSlash: true,
 }
 
 module.exports = nextConfig
