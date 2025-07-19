@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://folio.denehs.me'),
+  metadataBase: new URL('https://denehs.me'),
   title: 'David (Shao Hang) Kao - Product Leader',
   description: 'Portfolio of David Kao showcasing professional experience, vibe coding experiments, and personal interests',
   icons: {
@@ -14,11 +14,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'David (Shao Hang) Kao - Product Leader',
     description: 'Portfolio showcasing professional experience, vibe coding experiments, and personal interests',
-    url: 'https://folio.denehs.me',
+    url: 'https://denehs.me',
     siteName: 'David Kao Portfolio',
     images: [
       {
-        url: 'https://folio.denehs.me/og-image.png',
+        url: 'https://denehs.me/og-image.png',
         width: 1200,
         height: 630,
         alt: 'David Kao - Product Leader',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'David (Shao Hang) Kao - Product Leader',
     description: 'Portfolio showcasing professional experience, vibe coding experiments, and personal interests',
-    images: ['https://folio.denehs.me/og-image.png'],
+    images: ['https://denehs.me/og-image.png'],
   },
 }
 
