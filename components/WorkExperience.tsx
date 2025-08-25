@@ -5,18 +5,32 @@ import Image from 'next/image'
 
 const experiences = [
   {
+    company: 'Nekopan Lab',
+    logo: '/assets/logos/nekopan.png',
+    companyUrl: 'https://nekopanlab.com',
+    location: 'California, US',
+    period: 'August 2025 - Present',
+    roles: [
+      {
+        title: 'Founder',
+        period: 'August 2025 - Present',
+        description: 'Build things people love.'
+      }
+    ]
+  },
+  {
     company: 'Meta',
     logo: '/assets/logos/meta.svg',
     location: 'California, US',
-    period: 'March 2014 - Present',
+    period: 'March 2014 - August 2025',
     sections: [
       {
         department: 'Wearable',
-        period: 'March 2020 - Present',
+        period: 'March 2020 - August 2025',
         roles: [
           {
             title: 'Individual Contributor',
-            period: 'June 2025 - Present',
+            period: 'June 2025 - August 2025',
             description: 'Wearable Product.'
           },
           {
@@ -157,6 +171,7 @@ interface Section {
 interface Experience {
   company: string
   logo?: string
+  companyUrl?: string
   location: string
   period: string
   sections?: Section[]
@@ -209,9 +224,22 @@ export default function WorkExperience() {
                       <div className="relative z-10 mb-4 md:mb-6">
                         <div className="flex items-start justify-between">
                           <div>
-                            <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent leading-tight">
-                              {exp.company}
-                            </h3>
+                            {exp.companyUrl ? (
+                              <a 
+                                href={exp.companyUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-block hover:opacity-80 transition-opacity"
+                              >
+                                <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent leading-tight hover:from-gray-900 hover:to-gray-700 transition-all">
+                                  {exp.company}
+                                </h3>
+                              </a>
+                            ) : (
+                              <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent leading-tight">
+                                {exp.company}
+                              </h3>
+                            )}
                             <div className="flex flex-wrap items-center gap-2 mt-1 text-sm md:text-base">
                               <span className="text-gray-600">{exp.location}</span>
                               <span className="text-gray-400">•</span>
@@ -219,15 +247,32 @@ export default function WorkExperience() {
                             </div>
                           </div>
                           {exp.logo && (
-                            <div className="ml-4 p-2 bg-white rounded-lg shadow-sm">
-                              <Image
-                                src={exp.logo}
-                                alt={`${exp.company} logo`}
-                                width={exp.company === 'Mozilla Corporation' ? 40 : 48}
-                                height={exp.company === 'Mozilla Corporation' ? 40 : 48}
-                                className="object-contain"
-                              />
-                            </div>
+                            exp.companyUrl ? (
+                              <a 
+                                href={exp.companyUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="ml-4 p-2 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
+                              >
+                                <Image
+                                  src={exp.logo}
+                                  alt={`${exp.company} logo`}
+                                  width={exp.company === 'Mozilla Corporation' ? 40 : exp.company === 'Nekopan Lab' ? 56 : 48}
+                                  height={exp.company === 'Mozilla Corporation' ? 40 : exp.company === 'Nekopan Lab' ? 56 : 48}
+                                  className="object-contain"
+                                />
+                              </a>
+                            ) : (
+                              <div className="ml-4 p-2 bg-white rounded-lg shadow-sm">
+                                <Image
+                                  src={exp.logo}
+                                  alt={`${exp.company} logo`}
+                                  width={exp.company === 'Mozilla Corporation' ? 40 : 48}
+                                  height={exp.company === 'Mozilla Corporation' ? 40 : 48}
+                                  className="object-contain"
+                                />
+                              </div>
+                            )
                           )}
                         </div>
                       </div>
