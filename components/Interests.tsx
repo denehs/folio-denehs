@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const catPhotos = [
   { src: '/assets/interests/cat-birthday-15.jpg', alt: 'Orange cat with birthday hat celebrating 15th birthday' },
@@ -14,6 +14,26 @@ const catPhotos = [
 
 export default function Interests() {
   const [selectedCat, setSelectedCat] = useState<number | null>(null)
+
+  // Handle Escape key to close modal
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && selectedCat !== null) {
+        setSelectedCat(null)
+      }
+    }
+
+    if (selectedCat !== null) {
+      document.addEventListener('keydown', handleEscape)
+      // Prevent body scroll when modal is open
+      document.body.style.overflow = 'hidden'
+    }
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape)
+      document.body.style.overflow = ''
+    }
+  }, [selectedCat])
 
   return (
     <section id="interests" className="py-20 bg-gradient-to-b from-white to-gray-50">
@@ -42,10 +62,11 @@ export default function Interests() {
               {/* Asymmetric photo grid */}
               <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-5xl mx-auto">
                 {/* Featured large photo - birthday cat */}
-                <motion.div
+                <motion.button
                   whileHover={{ scale: 1.02 }}
                   className="col-span-2 row-span-2 relative overflow-hidden rounded-2xl shadow-lg cursor-pointer"
                   onClick={() => setSelectedCat(0)}
+                  aria-label={`View larger image of ${catPhotos[0].alt}`}
                 >
                   <Image
                     src={catPhotos[0].src}
@@ -57,17 +78,18 @@ export default function Interests() {
                   <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent p-4">
                     <p className="text-white text-sm font-medium">15th Birthday Celebration!</p>
                   </div>
-                </motion.div>
-                
+                </motion.button>
+
                 {/* Smaller photos */}
                 {catPhotos.slice(1).map((photo, index) => (
-                  <motion.div
+                  <motion.button
                     key={index + 1}
                     whileHover={{ scale: 1.05 }}
                     className={`relative overflow-hidden rounded-xl shadow-md cursor-pointer ${
                       index === 0 ? 'row-span-2' : ''
                     }`}
                     onClick={() => setSelectedCat(index + 1)}
+                    aria-label={`View larger image of ${photo.alt}`}
                   >
                     <Image
                       src={photo.src}
@@ -76,7 +98,7 @@ export default function Interests() {
                       height={300}
                       className="object-cover w-full h-full"
                     />
-                  </motion.div>
+                  </motion.button>
                 ))}
               </div>
             </motion.div>
@@ -109,7 +131,8 @@ export default function Interests() {
                       className="inline-flex items-center justify-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm font-medium"
                     >
                       View AIDA Certificate
-                      <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <span className="sr-only"> (opens in new tab)</span>
+                      <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </a>
@@ -120,7 +143,8 @@ export default function Interests() {
                       className="inline-flex items-center justify-center px-4 py-2 border border-blue-600 text-blue-600 rounded-lg hover:bg-blue-50 transition-colors text-sm font-medium"
                     >
                       Watch My Freediving Video
-                      <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <span className="sr-only"> (opens in new tab)</span>
+                      <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                       </svg>
@@ -191,18 +215,19 @@ export default function Interests() {
                       <div className="bg-gray-100 p-2 rounded mr-3 group-hover:bg-gray-800">
                         <Image
                           src="/assets/interests/gfc-logo-processed.png"
-                          alt="GFC"
+                          alt=""
                           width={50}
                           height={50}
                           className="object-contain"
                         />
                       </div>
                       <span className="text-sm">Team GFC</span>
-                      <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <span className="sr-only"> (opens in new tab)</span>
+                      <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </a>
-                    
+
                     <a
                       href="https://pckarting.com/"
                       target="_blank"
@@ -210,7 +235,8 @@ export default function Interests() {
                       className="inline-flex items-center justify-center px-6 py-3 bg-white border-2 border-red-600 text-red-600 rounded-lg hover:bg-red-600 hover:text-white transition-all text-sm font-medium"
                     >
                       Prairie City Kart Track
-                      <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <span className="sr-only"> (opens in new tab)</span>
+                      <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                       </svg>
                     </a>
@@ -230,6 +256,9 @@ export default function Interests() {
           exit={{ opacity: 0 }}
           className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
           onClick={() => setSelectedCat(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="modal-title"
         >
           <motion.div
             initial={{ scale: 0.9 }}
@@ -238,6 +267,7 @@ export default function Interests() {
             className="relative max-w-4xl max-h-[90vh]"
             onClick={(e) => e.stopPropagation()}
           >
+            <h2 id="modal-title" className="sr-only">{catPhotos[selectedCat].alt}</h2>
             <Image
               src={catPhotos[selectedCat].src}
               alt={catPhotos[selectedCat].alt}
@@ -248,8 +278,9 @@ export default function Interests() {
             <button
               onClick={() => setSelectedCat(null)}
               className="absolute top-4 right-4 w-10 h-10 bg-white/10 backdrop-blur rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+              aria-label="Close photo"
             >
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             </button>

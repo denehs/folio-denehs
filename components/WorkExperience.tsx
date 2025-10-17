@@ -315,14 +315,15 @@ export default function WorkExperience() {
                                         <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">{role.description}</p>
                                       )}
                                       {role.link && (
-                                        <a 
+                                        <a
                                           href={role.link.url}
                                           target="_blank"
                                           rel="noopener noreferrer"
                                           className="inline-flex items-center text-sm text-purple-600 hover:text-purple-800 mt-3 font-medium transition-colors"
                                         >
                                           {role.link.text}
-                                          <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                          <span className="sr-only"> (opens in new tab)</span>
+                                          <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                                           </svg>
                                         </a>
@@ -392,9 +393,9 @@ export default function WorkExperience() {
                     <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-indigo-200 to-purple-200 opacity-30 blur-3xl"></div>
                     
                     <div className="relative z-10">
-                      <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-4 md:mb-6">
+                      <h2 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-4 md:mb-6">
                         Education
-                      </h3>
+                      </h2>
                       
                       <div className="space-y-6">
                         {education.map((edu, index) => (
@@ -465,9 +466,9 @@ export default function WorkExperience() {
                     <div className="absolute top-0 left-0 w-32 h-32 bg-gradient-to-br from-yellow-200 to-orange-200 opacity-30 blur-3xl"></div>
                     
                     <div className="relative z-10">
-                      <h3 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-4 md:mb-6">
+                      <h2 className="text-xl md:text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent mb-4 md:mb-6">
                         Competition Records
-                      </h3>
+                      </h2>
                       
                       <div className="grid gap-2 sm:gap-3 sm:grid-cols-2">
                         {competitions.map((comp, index) => (
