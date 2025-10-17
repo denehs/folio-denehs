@@ -103,7 +103,7 @@ export default function Projects() {
                   </div>
                   <h3 className="text-3xl font-bold text-gray-900">Neko Cube</h3>
                   <p className="text-gray-600 text-lg leading-relaxed">
-                    A web-based 3D app that solves Rubik's cube with layer by layer approach.
+                    A web-based 3D app that solves Rubik&apos;s cube with layer by layer approach.
                   </p>
                   <div className="flex flex-wrap gap-4 pt-2">
                     <a
