@@ -55,7 +55,7 @@ export default function Projects() {
                 </p>
                 <div className="flex flex-wrap gap-4 pt-2">
                   <a
-                    href="http://nekopanlab.com#nekocard"
+                    href="https://nekocard.app"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 text-white rounded-full hover:bg-purple-700 transition-colors font-medium"
