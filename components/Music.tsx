@@ -72,7 +72,7 @@ export default function Music() {
                 className="inline-flex items-center justify-center px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm font-medium shadow-md"
               >
                 <YouTubeIcon className="w-5 h-5 mr-2" />
-                Watch the performance on YouTube
+                Watch my recording on YouTube
                 <span className="sr-only"> (opens in new tab)</span>
               </a>
             </div>
