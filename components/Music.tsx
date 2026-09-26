@@ -3,8 +3,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
-const YOUTUBE_VIDEO_ID = '3xNP0--L-L8'
-const YOUTUBE_VIDEO_URL = `https://www.youtube.com/watch?v=${YOUTUBE_VIDEO_ID}`
+const YOUTUBE_VIDEO_URL = 'https://www.youtube.com/watch?v=3xNP0--L-L8'
 const YOUTUBE_CHANNEL_URL = 'https://www.youtube.com/channel/UClYCiMSvnnURaYitqw_AXFA'
 
 function YouTubeIcon({ className }: { className?: string }) {
@@ -17,7 +16,7 @@ function YouTubeIcon({ className }: { className?: string }) {
 
 export default function Music() {
   return (
-    <section id="music" className="py-20 bg-gradient-to-b from-gray-50 via-amber-50 to-gray-50">
+    <section id="music" className="py-20 scroll-mt-20 bg-gradient-to-b from-gray-50 via-amber-50 to-gray-50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -65,28 +64,17 @@ export default function Music() {
                 Ohlone College Applied Music Recital &middot; May 2026
               </p>
             </div>
-            <div className="p-8 md:p-10 pt-6">
-              <div className="relative aspect-video rounded-2xl overflow-hidden shadow-lg bg-black">
-                <iframe
-                  src={`https://www.youtube-nocookie.com/embed/${YOUTUBE_VIDEO_ID}`}
-                  title="Lágrima by Francisco Tárrega — Ohlone College Applied Music Recital, May 2026"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full"
-                />
-              </div>
-              <div className="mt-6 flex flex-col sm:flex-row gap-3">
-                <a
-                  href={YOUTUBE_VIDEO_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-4 py-2 border border-red-600 text-red-600 rounded-lg hover:bg-red-50 transition-colors text-sm font-medium"
-                >
-                  <YouTubeIcon className="w-4 h-4 mr-2" />
-                  Watch on YouTube
-                  <span className="sr-only"> (opens in new tab)</span>
-                </a>
-              </div>
+            <div className="px-8 md:px-10 pb-8 md:pb-10">
+              <a
+                href={YOUTUBE_VIDEO_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm font-medium shadow-md"
+              >
+                <YouTubeIcon className="w-5 h-5 mr-2" />
+                Watch the performance on YouTube
+                <span className="sr-only"> (opens in new tab)</span>
+              </a>
             </div>
           </div>
         </motion.div>
@@ -100,7 +88,7 @@ export default function Music() {
           className="max-w-4xl mx-auto mt-10"
         >
           <a
-            href="https://catmetronome.com"
+            href="https://apps.apple.com/us/app/cat-metronome/id6756994792"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center gap-4 bg-white rounded-2xl border border-amber-100 shadow-md px-5 py-4 hover:shadow-lg transition-shadow"
@@ -120,9 +108,9 @@ export default function Music() {
               </p>
             </div>
             <span className="hidden sm:inline-flex items-center text-sm font-medium text-amber-700 flex-shrink-0">
-              Visit site
+              Download on the App Store
               <svg className="w-4 h-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
               </svg>
               <span className="sr-only"> (opens in new tab)</span>
             </span>
