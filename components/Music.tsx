@@ -3,8 +3,18 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
-const YOUTUBE_VIDEO_URL = 'https://www.youtube.com/watch?v=3xNP0--L-L8'
 const YOUTUBE_CHANNEL_URL = 'https://www.youtube.com/channel/UClYCiMSvnnURaYitqw_AXFA'
+
+// Newest first: add future pieces at the TOP of this list — newer performances should be better.
+// Each entry renders as a subtle row, no layout changes needed.
+const recordings = [
+  {
+    title: 'Lágrima',
+    composer: 'Francisco Tárrega',
+    event: 'Ohlone College Applied Music Recital · May 2026',
+    url: 'https://www.youtube.com/watch?v=3xNP0--L-L8',
+  },
+]
 
 function YouTubeIcon({ className }: { className?: string }) {
   return (
@@ -44,7 +54,7 @@ export default function Music() {
           </div>
         </motion.div>
 
-        {/* Featured performance */}
+        {/* Recordings — grows as a list, each row keeps a subtle link */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -52,30 +62,38 @@ export default function Music() {
           viewport={{ once: true }}
           className="max-w-4xl mx-auto"
         >
-          <div className="bg-white rounded-3xl shadow-xl overflow-hidden border border-amber-100">
-            <div className="px-8 md:px-10 pt-8 md:pt-10">
-              <p className="text-sm font-semibold text-amber-700 uppercase tracking-wide mb-2">
-                Featured Performance
-              </p>
-              <h3 className="text-2xl font-semibold text-gray-900">
-                L&aacute;grima &mdash; Francisco T&aacute;rrega
-              </h3>
-              <p className="text-gray-600 mt-2">
-                Ohlone College Applied Music Recital &middot; May 2026
+          <div className="bg-white rounded-3xl shadow-xl border border-amber-100 overflow-hidden">
+            <div className="px-8 md:px-10 pt-8 md:pt-10 pb-2">
+              <p className="text-sm font-semibold text-amber-700 uppercase tracking-wide">
+                Recordings
               </p>
             </div>
-            <div className="px-8 md:px-10 pb-8 md:pb-10">
-              <a
-                href={YOUTUBE_VIDEO_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm font-medium shadow-md"
-              >
-                <YouTubeIcon className="w-5 h-5 mr-2" />
-                Watch my recording on YouTube
-                <span className="sr-only"> (opens in new tab)</span>
-              </a>
-            </div>
+            <ul className="divide-y divide-amber-100/70">
+              {recordings.map((recording) => (
+                <li
+                  key={recording.url}
+                  className="px-8 md:px-10 py-5 flex items-center justify-between gap-4"
+                >
+                  <div className="min-w-0">
+                    <p className="font-semibold text-gray-900">
+                      {recording.title}
+                      <span className="font-normal text-gray-500"> — {recording.composer}</span>
+                    </p>
+                    <p className="text-sm text-gray-500 mt-0.5">{recording.event}</p>
+                  </div>
+                  <a
+                    href={recording.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-sm font-medium text-red-600 hover:text-red-700 flex-shrink-0"
+                  >
+                    <YouTubeIcon className="w-4 h-4 mr-1.5" />
+                    YouTube
+                    <span className="sr-only"> (opens in new tab)</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
         </motion.div>
 
