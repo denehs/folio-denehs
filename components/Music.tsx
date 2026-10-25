@@ -7,11 +7,29 @@ const YOUTUBE_CHANNEL_URL = 'https://www.youtube.com/channel/UClYCiMSvnnURaYitqw
 
 // Newest first: add future pieces at the TOP of this list — newer performances should be better.
 // Each entry renders as a subtle row, no layout changes needed.
-const recordings = [
+// Entries without a video link yet show "Video coming soon" until the link arrives.
+type Recording = {
+  title: string
+  composer: string
+  event: string
+  url?: string
+}
+
+const recordings: Recording[] = [
+  {
+    title: 'Alicia',
+    composer: 'Lorian Testard',
+    event: 'Jade Wu Student Recital · October 2026 · Piano',
+  },
+  {
+    title: 'Prelude in C♯ minor',
+    composer: 'Sergei Rachmaninoff',
+    event: 'Jade Wu Student Recital · October 2026 · Piano',
+  },
   {
     title: 'Lágrima',
     composer: 'Francisco Tárrega',
-    event: 'Ohlone College Applied Music Recital · May 2026',
+    event: 'Ohlone College Applied Music Recital · May 2026 · Guitar',
     url: 'https://www.youtube.com/watch?v=3xNP0--L-L8',
   },
 ]
@@ -37,8 +55,8 @@ export default function Music() {
           <h2 className="text-3xl font-bold text-center mb-4">Music</h2>
           <p className="text-center text-gray-600 max-w-2xl mx-auto mb-6">
             Classical guitar student at Ohlone College, studying performance through the
-            Applied Music program. This portfolio is just getting started — one recital
-            and one recording in, with more to come.
+            Applied Music program. A growing record of recitals and recordings, on guitar
+            and piano.
           </p>
           <div className="flex justify-center mb-14">
             <a
@@ -54,7 +72,7 @@ export default function Music() {
           </div>
         </motion.div>
 
-        {/* Recordings — grows as a list, each row keeps a subtle link */}
+        {/* Performances — grows as a list, each row keeps a subtle link */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -65,13 +83,13 @@ export default function Music() {
           <div className="bg-white rounded-3xl shadow-xl border border-amber-100 overflow-hidden">
             <div className="px-8 md:px-10 pt-8 md:pt-10 pb-2">
               <p className="text-sm font-semibold text-amber-700 uppercase tracking-wide">
-                Recordings
+                Performances
               </p>
             </div>
             <ul className="divide-y divide-amber-100/70">
               {recordings.map((recording) => (
                 <li
-                  key={recording.url}
+                  key={recording.title}
                   className="px-8 md:px-10 py-5 flex items-center justify-between gap-4"
                 >
                   <div className="min-w-0">
@@ -81,16 +99,20 @@ export default function Music() {
                     </p>
                     <p className="text-sm text-gray-500 mt-0.5">{recording.event}</p>
                   </div>
-                  <a
-                    href={recording.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center text-sm font-medium text-red-600 hover:text-red-700 flex-shrink-0"
-                  >
-                    <YouTubeIcon className="w-4 h-4 mr-1.5" />
-                    YouTube
-                    <span className="sr-only"> (opens in new tab)</span>
-                  </a>
+                  {recording.url ? (
+                    <a
+                      href={recording.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-sm font-medium text-red-600 hover:text-red-700 flex-shrink-0"
+                    >
+                      <YouTubeIcon className="w-4 h-4 mr-1.5" />
+                      YouTube
+                      <span className="sr-only"> (opens in new tab)</span>
+                    </a>
+                  ) : (
+                    <span className="text-sm text-gray-400 flex-shrink-0">Video coming soon</span>
+                  )}
                 </li>
               ))}
             </ul>
