@@ -44,7 +44,7 @@ export default function Interests() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold text-center mb-16">Beyond the Code</h2>
+          <h2 className="text-3xl font-bold text-center mb-16">Beyond the Music</h2>
           
           {/* Cat Dad Section - More weight */}
           <div className="mb-20">

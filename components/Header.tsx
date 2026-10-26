@@ -4,9 +4,8 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 
 const sections = [
-  { id: 'vibe-coding', name: 'Projects' },
-  { id: 'interests', name: 'Interests' },
   { id: 'music', name: 'Music' },
+  { id: 'interests', name: 'Interests' },
   { id: 'experience', name: 'Experience' },
 ]
 

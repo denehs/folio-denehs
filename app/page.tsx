@@ -2,9 +2,8 @@
 
 import { motion } from 'framer-motion'
 import Header from '@/components/Header'
-import Projects from '@/components/Projects'
-import Interests from '@/components/Interests'
 import Music from '@/components/Music'
+import Interests from '@/components/Interests'
 import WorkExperience from '@/components/WorkExperience'
 import Footer from '@/components/Footer'
 
@@ -33,9 +32,8 @@ export default function Home() {
         </section>
 
         {/* Main Content Sections */}
-        <Projects />
-        <Interests />
         <Music />
+        <Interests />
         <WorkExperience />
       </main>
 

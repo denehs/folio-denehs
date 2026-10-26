@@ -5,6 +5,19 @@ import Image from 'next/image'
 
 const experiences = [
   {
+    company: 'Ohlone College',
+    logo: '',
+    location: 'California, US',
+    period: 'Spring 2026 - Present',
+    roles: [
+      {
+        title: 'Student',
+        period: 'Spring 2026 - Present',
+        description: 'Music major, classical guitar.'
+      }
+    ]
+  },
+  {
     company: 'Nekopan Lab',
     logo: '/assets/logos/nekopan.png',
     companyUrl: 'https://nekopanlab.com',
