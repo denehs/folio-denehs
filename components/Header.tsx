@@ -45,7 +45,7 @@ export default function Header() {
             className="flex-shrink-0"
           >
             <p className="text-xl font-bold">David Kao</p>
-            <p className="text-sm text-gray-600">Product Leader</p>
+            <p className="text-sm text-gray-600">Music Student</p>
           </motion.div>
 
           {/* Desktop Navigation */}

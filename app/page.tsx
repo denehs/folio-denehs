@@ -24,10 +24,9 @@ export default function Home() {
               className="text-center"
             >
               <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 whitespace-nowrap">David (Shao Hang) Kao</h1>
-              <h2 className="text-xl sm:text-2xl text-gray-600 mb-6">Product Leader</h2>
+              <h2 className="text-xl sm:text-2xl text-gray-600 mb-6">Music Student</h2>
               <p className="text-lg text-gray-700 max-w-3xl mx-auto">
-                Passionate about building innovative products, leading high-performance teams,
-                and exploring the intersection of technology and creativity through vibe coding experiments.
+                Classical Guitar &amp; Piano
               </p>
             </motion.div>
           </div>

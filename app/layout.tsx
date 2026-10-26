@@ -6,13 +6,13 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://denehs.me'),
-  title: 'David (Shao Hang) Kao - Product Leader',
+  title: 'David (Shao Hang) Kao - Music Student',
   description: 'Portfolio of David Kao showcasing professional experience, vibe coding experiments, and personal interests',
   icons: {
     icon: '/favicon.svg',
   },
   openGraph: {
-    title: 'David (Shao Hang) Kao - Product Leader',
+    title: 'David (Shao Hang) Kao - Music Student',
     description: 'Portfolio showcasing professional experience, vibe coding experiments, and personal interests',
     url: 'https://denehs.me',
     siteName: 'David Kao Portfolio',
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
         url: 'https://denehs.me/og-image.png',
         width: 1200,
         height: 630,
-        alt: 'David Kao - Product Leader',
+        alt: 'David Kao - Music Student',
       }
     ],
     locale: 'en_US',
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'David (Shao Hang) Kao - Product Leader',
+    title: 'David (Shao Hang) Kao - Music Student',
     description: 'Portfolio showcasing professional experience, vibe coding experiments, and personal interests',
     images: ['https://denehs.me/og-image.png'],
   },
