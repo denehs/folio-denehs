@@ -20,11 +20,13 @@ const recordings: Recording[] = [
     title: 'Alicia',
     composer: 'Lorian Testard',
     event: 'Jade Wu Student Recital · October 2026 · Piano',
+    url: 'https://www.youtube.com/watch?v=R-lT_LZMA3E',
   },
   {
     title: 'Prelude in C♯ minor',
     composer: 'Sergei Rachmaninoff',
     event: 'Jade Wu Student Recital · October 2026 · Piano',
+    url: 'https://www.youtube.com/watch?v=sUjGPzBbczE',
   },
   {
     title: 'Lágrima',
