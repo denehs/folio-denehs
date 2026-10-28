@@ -159,15 +159,6 @@ export default function Music() {
           </a>
         </motion.div>
 
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="text-center text-gray-500 mt-12 text-sm"
-        >
-          New repertoire in progress &mdash; more recitals and recordings on the way.
-        </motion.p>
       </div>
     </section>
   )
