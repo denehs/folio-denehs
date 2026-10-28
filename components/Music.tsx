@@ -3,8 +3,6 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
-const YOUTUBE_CHANNEL_URL = 'https://www.youtube.com/channel/UClYCiMSvnnURaYitqw_AXFA'
-
 // Newest first: add future pieces at the TOP of this list — newer performances should be better.
 // Each entry renders as a subtle row, no layout changes needed.
 // Entries without a video link yet show "Video coming soon" until the link arrives.
@@ -54,19 +52,7 @@ export default function Music() {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl font-bold text-center mb-4">Music</h2>
-          <div className="flex justify-center mb-14">
-            <a
-              href={YOUTUBE_CHANNEL_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors text-sm font-medium shadow-md"
-            >
-              <YouTubeIcon className="w-5 h-5 mr-2" />
-              My YouTube Channel
-              <span className="sr-only"> (opens in new tab)</span>
-            </a>
-          </div>
+          <h2 className="text-3xl font-bold text-center mb-10">Music</h2>
         </motion.div>
 
         {/* Performances — grows as a list, each row keeps a subtle link */}
