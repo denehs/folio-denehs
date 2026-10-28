@@ -55,11 +55,6 @@ export default function Music() {
           viewport={{ once: true }}
         >
           <h2 className="text-3xl font-bold text-center mb-4">Music</h2>
-          <p className="text-center text-gray-600 max-w-2xl mx-auto mb-6">
-            Classical guitar student at Ohlone College, studying performance through the
-            Applied Music program. A growing record of recitals and recordings, on guitar
-            and piano.
-          </p>
           <div className="flex justify-center mb-14">
             <a
               href={YOUTUBE_CHANNEL_URL}
